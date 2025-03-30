@@ -1,0 +1,62 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Apply background image */
+body {
+    background: url('https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: #e0e0e0; /* Light text for better readability on dark backgrounds */
+}
+
+.clock {
+    backdrop-filter: blur(2px); 
+    border-radius: 20px;
+    padding: 30px 50px;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.time {
+    font-size: 6rem; 
+    font-weight: 600;
+    color: #f2f7f7; /* Cyan glow effect color */
+    text-shadow: 
+        0 0 20px rgba(0, 255, 255, 1), 
+        0 0 40px rgba(0, 255, 255, 1), 
+        0 0 60px rgba(0, 255, 255, 1);
+    letter-spacing: 5px; /* Increased spacing for a modern look */
+}
+
+/* Add a glowing animation */
+@keyframes glow {
+    0% { text-shadow: 
+        0 0 20px rgba(0, 255, 255, 1), 
+        0 0 40px rgba(0, 255, 255, .8), 
+        0 0 60px rgba(0, 255, 255, .6); }
+    50% { text-shadow: 
+        0 0 30px rgba(0, 255, 255, .9), 
+        0 0 50px rgba(0, 255, 255, .7), 
+        0 0 70px rgba(0,255,255,.5); }
+    100% { text-shadow: 
+        0 0 20px rgba(0,255,255,.8), 
+        0 0 40px rgba(0,255,255,.6), 
+        0 0 60px rgba(0,255,255,.4); }
+}
+
+.time {
+    animation: glow ease-in-out infinite alternate-reverse;
+}
+
+/* Additional Styling for Responsiveness */
+@media (max-width:768px) {
+    .time {
+        font-size:4rem; /* Adjust font size for smaller screens */
+        letter-spacing:3px;
+    }
+}
